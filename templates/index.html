@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <title>메인페이지</title>
+
+    <style>
+        @font-face {
+            font-family: 'KOTRAHOPE';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'GmarketSansBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'GmarketSansLight';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, input, a, button {
+            cursor: url("../static/mouseimg.png"), auto;
+        }
+        .wrap {
+            margin-top: -10px;
+        }
+        .banner {
+            width: 100%;
+            height: 80px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .banner h1{
+            font-family: 'Kanit', sans-serif;
+            color: #5e5b5b;
+            margin-bottom: 0;
+        }
+        .banner .logout {
+            padding: 10px 20px;
+            background-color: #fff069;
+            height: 45px;
+            border-radius: 15px;
+            color: #5e5b5b;
+            margin-bottom: 0;
+
+        }
+
+        .posting-box > .custom-file {
+        }
+        .content {
+            padding: 0 100px;
+        }
+        .form-control {
+            border: none !important;
+        }
+        #input-search {
+            background-color: #f8f9fa;
+        }
+        .search-box {
+            background-color: #f8f9fa;
+            width: 400px;
+        }
+        .visual {
+            height: 700px;
+            background-image: url("../static/background.jpg");
+            background-size: cover;
+            padding: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .visual .main_title {
+            font-size: 85px;
+            color: #fff;
+            font-family: 'Mochiy Pop P One', sans-serif;
+        }
+        .visual .sub_title {
+            font-size: 40px;
+            color: #fff;
+            font-family: 'KOTRAHOPE';
+        }
+        .posting-box {
+            display: flex;
+            margin-top: 20px;
+        }
+        .posting-box .custom-file, .posting-box .form-group {
+            width: 30%;
+            border: none;
+        }
+        .posting-box .form-group {
+            border-left: 1px solid #495057;
+        }
+        .posting-box .custom-file {
+            border-radius: 10px 0 0 10px;
+        }
+        .custom-file-label {
+            border: none;
+            border-radius: inherit;
+        }
+        .form-control {
+            border-radius: inherit;
+        }
+        .custom-file-label {
+            height: auto;
+        }
+        .post_btn {
+            height: 36px;
+            width: 10%;
+            background-color: #fff069 !important;
+            border: none;
+            color: #5e5b5b;
+            border-radius: 0 10px 10px 0;
+        }
+        .content_txt_sub {
+            margin-top: 20px;
+            color: darkred;
+            font-family: 'KOTRAHOPE';
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .content_txt_main {
+            font-family: 'KOTRAHOPE';
+            font-size: 60px;
+            text-align: center;
+            color: #000;
+        }
+        .btn_favo {
+            display: none;
+        }
+        .card-title {
+            font-family: 'GmarketSansBold';
+            font-size: 20px;
+        }
+        .card-text {
+            font-family: 'GmarketSansLight';
+            font-size: 16px;
+        }
+        .btn_more {
+            font-family: 'GmarketSansMedium';
+            display: none;
+        }
+        .custom-file-input:lang(en)~.custom-file-label::after {
+            content:"사진넣기" !important;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            bsCustomFileInput.init()
+            {#view_cafe()#}
+        });
+        {% if msg %}
+            alert("{{ msg }}")
+        {% endif %}
+        let info = {{ info|tojson }};
+        let info_list = [];
+        for (let i = 0; i < info.length; i++) {
+            info_list.push(info[i]["word"])
+        }
+
+
+
+        function cafe_posting() {
+            let name = $("#name").val()
+            let station = $("#station").val()
+
+            let file = $('#file')[0].files[0]
+            let form_data = new FormData()
+
+            form_data.append("file_give", file)
+            form_data.append("name_give", name)
+            form_data.append("station_give", station)
+
+            $.ajax({
+                type: "POST",
+                url: "/cafe",
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            });
+        }
+
+        // function cafe_posting() {
+        //     let name = $("#name").val()
+        //     let station = $("#station").val()
+        //
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/cafe",
+        //         data: {name_give: name, station_give: station},
+        //         success: function (response) {
+        //             alert(response['msg'])
+        //             window.location.reload()
+        //         }
+        //     })
+        // }
+
+        function view_cafe() {
+            $.ajax({
+                type: "GET",
+                url: "/cafe",
+                data: {},
+                success: function (response) {
+                    let cafes = response['all_cafe']
+                    for (let i = 0; i < cafes.length; i++) {
+                        let name = cafes[i]['name']
+                        let station = cafes[i]['station']
+                        let file = cafes[i]['file']
+                        {#let music1 = cafes[i]['music1']#}
+                        {#let music2 = cafes[i]['music2']#}
+                        {#let music3 = cafes[i]['music3']#}
+                        {#let music4 = cafes[i]['music4']#}
+                        {#let music5 = cafes[i]['music5']#}
+                        {#let music6 = cafes[i]['music6']#}
+                        {#상세페이지로 들어갈 내용#}
+                        {#아래 temp_html에도 내용 추가할 것 #}
+
+                        let temp_html = `<div class="card">
+                                            <img class="card-img-top" src="../static/${file}"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${name}</h5>
+                                                <p class="card-text"> ${station}</p>
+                                                <button type="button" class="btn btn-warning btn_more">상세페이지</button>
+                                                <button onclick="like_posting()" type="button" class="btn btn-danger btn_favo">즐찾버튼(하트) FA사용?</button>
+                                            </div>
+                                        </div>`
+
+                        $('#cafes-box').append(temp_html)
+
+                    }
+                }
+            })
+        }
+
+        function find_cafe() {
+            $('#cafes-box').empty()
+            $.ajax({
+                type: "GET",
+                url: "/search",
+                data: {},
+                success: function (response) {
+                    let searchVal = $('.find_cafe').val()
+                    let cafes = response['all_cafe']
+                    for (let i = 0; i < cafes.length; i++) {
+                        let name = cafes[i]['name']
+                        let station = cafes[i]['station']
+                        let file = cafes[i]['file']
+                        if (searchVal == name || searchVal == station) {
+                            let find_name = name
+                            let find_station = station
+                            let find_file = file
+
+
+                            let temp_html = `<div class="card">
+                                            <img class="card-img-top" src="../static/${find_file}"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${find_name}</h5>
+                                                <p class="card-text"> ${find_station}</p>
+                                                <button type="button" class="btn btn-warning btn_more">상세페이지</button>
+                                                <button onclick="like_posting()" type="button" class="btn btn-danger btn_favo">즐찾버튼(하트) FA사용?</button>
+                                            </div>
+                                        </div>`
+
+                            $('#cafes-box').append(temp_html)
+                        }
+                    }
+                }
+            })
+        }
+
+
+        function like_posting() {
+            $.ajax({
+                type: "POST",
+                url: "/cafe",
+                data: {sample_give: '샘플데이터'},
+                success: function (response) {
+                    alert(response['msg'])
+                    window.location.reload()
+                }
+            })
+        }
+
+        function sign_out() {
+            $.removeCookie('mytoken');
+            window.location.href = '/login';
+        }
+
+
+    </script>
+</head>
+<body>
+<div class=wrap>
+    <div class='banner'>
+        <h1 class="logo" onclick="window.location.href = '/'">Hidden Track</h1>
+        <div class="search-box d-flex justify-content-center">
+            <input id="input-search" class="form-control find_cafe" style="margin-right: 0.5rem"
+                   placeholder="지하철역 혹은 카페이름을 검색해주세요!!">
+            <button class="btn btn-light" onclick="find_cafe()"><i class="fa fa-search"></i></button>
+        </div>
+        <p class="logout" onclick="sign_out()">로그아웃</p>
+    </div>
+    <div class="visual">
+        <h4 class="sub_title">내가 찾던 완벽한 카페</h4>
+        <h3 class="main_title">Hidden Track</h3>
+        <div class='posting-box'>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file">
+                <label class="custom-file-label" for="file">카페 사진</label>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="name"
+                       placeholder="카페명">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="station"
+                       placeholder="인근 지하철역">
+            </div>
+            <button onclick='cafe_posting()' type="button" class="btn btn-primary post_btn"> 게시하기
+            </button>
+
+        </div>
+    </div>
+    <div class="content">
+        <p class="content_txt_sub">이곳은 어떤가요?</p>
+        <p class="content_txt_main">히든트랙 추천매장</p>
+        <div class='cafelisting'>
+
+        </div>
+        <hr>
+        <div class="card-columns" id='cafes-box'>
+            {% for info in info %}
+                <div class="card" id="cards">
+                    {% if true %}
+                        <img class="card-img-top" id="info-img" src="{{ url_for('static', filename=info.file) }}"
+                             alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title" id="info-name">{{ info.name }}</h5>
+                        <p class="card-text" id="info-station">{{ info.station }}</p>
+                        <button type="button" class="btn btn-warning btn_more">상세페이지</button>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<script>
+    $('.btn_more').click(function () {
+        let that = $(this).siblings()
+        let what = that[0].innerText
+        console.log(what)
+        $.ajax({
+            type: "POST",
+            url: "/detail",
+            data: {detail_give: what},
+            success: function (response) {
+                alert(response['msg'])
+            }
+        })
+        window.location.href = "/detail"
+    })
+</script>
+</body>
+</html>
